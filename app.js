@@ -1,12 +1,15 @@
+const fs = require('fs');
 const helpers = require('./helpers.js')
-
-console.log('app.js running...')
+console.log('app.js running!')
 
 module.exports = app => {
 
-  app.on('issues.opened', async context => {
+  app.log("up and running");
 
+  app.on('issues.opened', async context => {
+    // app.log("i have new issues");
     const issueTitle = context.payload.issue.title
+    // app.log(issueTitle);
 
     const triggerPattern = /bootstrap my board/gi;
     const triggerRegEx = triggerPattern.test(issueTitle);
@@ -15,7 +18,7 @@ module.exports = app => {
 
   	if (triggerRegEx) {
 
-      console.log('bootstrap running...')
+      app.log('bootstrap running...')
 
       //move bootstrap issue into progress
       const updateIssue = context.repo({
@@ -28,10 +31,10 @@ module.exports = app => {
       //get card data from config
       const cardData = await getCardData()
 
-      //create cards in reverse order for proper order on waffle.io board
+//       //create cards in reverse order for proper order on waffle.io board
       const newIssues = await createCards(context, cardData.reverse())
 
-      //update cards with epic and dependency relationships
+//       //update cards with epic and dependency relationships
       await updateCardRelationships(context, cardData, newIssues)
 
       //close bootstrap issue
@@ -65,14 +68,14 @@ async function updateCardRelationships(context, cardData, newIssues) {
   
   for (const card of cardData) {
 
-    //console.log('id: ' + card.id + ' is child of id: ' + card.childOf)
+    console.log('id: ' + card.id + ' is child of id: ' + card.childOf)
     const newIssue = newIssues.find(issue => issue.id === card.id)
-    //console.log('id: ' + card.id + ' is: ' + newIssue.issueNumber)
+    console.log('id: ' + card.id + ' is: ' + newIssue.issueNumber)
 
     if(card.childOf) {
 
       const parentIssue = newIssues.find(issue => issue.id === card.childOf)
-      //console.log('parent id: ' + card.childOf + ' is: ' + parentIssue.issueNumber)
+      console.log('parent id: ' + card.childOf + ' is: ' + parentIssue.issueNumber)
 
       issue = await getIssue(context, newIssue.issueNumber)
 

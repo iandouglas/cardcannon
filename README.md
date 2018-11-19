@@ -68,3 +68,6 @@ For more, check out the [Contributing Guide](CONTRIBUTING.md).
 ## License
 
 [ISC](LICENSE) © 2018 Waffle.io <team@waffle.io> (www.waffle.io)
+
+
+"start": "echo 'temporary stop'; sleep 10000; rpobot run ./app.js",
