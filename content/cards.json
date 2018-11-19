@@ -1,31 +1,97 @@
-[
-    {
-        "id": 1,
-        "title": "Epic 1: Learn How to Use Waffle 🏃🏃🏃",
-        "labels": ["waffle.io", "in progress"],
-        "childOf": null,
-        "dependsOn": null
-    },
-    {
-        "id": 2,
-        "title": "🤖 Install WaffleBot",
-        "labels": ["waffle.io", "to do"],
-        "childOf": 1,
-        "dependsOn": null
-        
-    },
-    {
-        "id": 3,
-        "title": "⚙ Configure Waffle board automation rules",
-        "labels": ["waffle.io", "to do"],
-        "childOf": 1,
-        "dependsOn": [2]
-    },
-    {
-        "id": 4,
-        "title": "🚢 Move issue to in progress from branch",
-        "labels": ["waffle.io", "to do"],
-        "childOf": 1,
-        "dependsOn": [2, 3]
-    }
-]
+{
+  "admin-nav": {
+    "childOf": 1,
+    "dependsOn": 2,
+    "id": 5,
+    "labels": [
+      "nav",
+      "admin",
+      "to do"
+    ],
+    "slug": "admin-nav",
+    "title": "Admin Navigation"
+  },
+  "merchant-nav": {
+    "childOf": 1,
+    "dependsOn": 2,
+    "id": 4,
+    "labels": [
+      "nav",
+      "merchant",
+      "to do"
+    ],
+    "slug": "merchant-nav",
+    "title": "Merchant Navigation"
+  },
+  "nav-base": {
+    "childOf": null,
+    "dependsOn": null,
+    "id": 1,
+    "labels": [
+      "nav",
+      "in progress"
+    ],
+    "slug": "nav-base",
+    "title": "Epic: Navigation"
+  },
+  "user-nav": {
+    "childOf": 1,
+    "dependsOn": 2,
+    "id": 3,
+    "labels": [
+      "nav",
+      "user",
+      "to do"
+    ],
+    "slug": "user-nav",
+    "title": "User Navigation"
+  },
+  "user-registration": {
+    "childOf": 6,
+    "dependsOn": 2,
+    "id": 7,
+    "labels": [
+      "user",
+      "registration",
+      "to do"
+    ],
+    "slug": "user-registration",
+    "title": "User Registration"
+  },
+  "user-registration-base": {
+    "childOf": null,
+    "dependsOn": null,
+    "id": 6,
+    "labels": [
+      "user",
+      "registration",
+      "in progress"
+    ],
+    "slug": "user-registration-base",
+    "title": "Epic: User Registration"
+  },
+  "user-registration-non-unique-email": {
+    "childOf": 6,
+    "dependsOn": 7,
+    "id": 8,
+    "labels": [
+      "user",
+      "registration",
+      "to do"
+    ],
+    "slug": "user-registration-non-unique-email",
+    "title": "User Registration, Email not Unique"
+  },
+  "visitor-nav": {
+    "childOf": 1,
+    "dependsOn": null,
+    "id": 2,
+    "labels": [
+      "nav",
+      "visitor",
+      "to do"
+    ],
+    "slug": "visitor-nav",
+    "title": "Visitor Navigation"
+  }
+}
