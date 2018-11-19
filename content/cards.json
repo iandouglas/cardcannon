@@ -1,7 +1,9 @@
 [
   {
     "childOf": 1,
-    "dependsOn": 2,
+    "dependsOn": [
+      2
+    ],
     "id": 3,
     "labels": [
       "nav",
@@ -12,7 +14,9 @@
   },
   {
     "childOf": 1,
-    "dependsOn": 2,
+    "dependsOn": [
+      2
+    ],
     "id": 5,
     "labels": [
       "nav",
@@ -34,7 +38,9 @@
   },
   {
     "childOf": 1,
-    "dependsOn": 2,
+    "dependsOn": [
+      2
+    ],
     "id": 4,
     "labels": [
       "nav",
@@ -45,7 +51,9 @@
   },
   {
     "childOf": 6,
-    "dependsOn": 2,
+    "dependsOn": [
+      2
+    ],
     "id": 7,
     "labels": [
       "user",
@@ -56,7 +64,9 @@
   },
   {
     "childOf": 6,
-    "dependsOn": 7,
+    "dependsOn": [
+      7
+    ],
     "id": 8,
     "labels": [
       "user",
