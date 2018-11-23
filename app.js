@@ -30,9 +30,13 @@ module.exports = app => {
 
       //get card data from config
       const cardData = await getCardData()
+      app.log("card data:");
+      app.log(cardData);
 
 //       //create cards in reverse order for proper order on waffle.io board
       const newIssues = await createCards(context, cardData.reverse())
+      app.log("issues created:");
+      app.log(newIssues);
 
 //       //update cards with epic and dependency relationships
       await updateCardRelationships(context, cardData, newIssues)
@@ -55,7 +59,7 @@ async function getCardData() {
 
 async function createCards(context, cardData) {
   let newIssues = []
-  
+
   for (const card of cardData) {
     const response = await (createIssue(context, card))
     newIssues.push({id: card.id, issueNumber: response.data.number})
@@ -65,43 +69,37 @@ async function createCards(context, cardData) {
 }
 
 async function updateCardRelationships(context, cardData, newIssues) {
-  
-  for (const card of cardData) {
 
-    console.log('id: ' + card.id + ' is child of id: ' + card.childOf)
+  for (const card of cardData) {
+    console.log('updaterelationship, card.id: ' + card.id)
     const newIssue = newIssues.find(issue => issue.id === card.id)
-    console.log('id: ' + card.id + ' is: ' + newIssue.issueNumber)
+    console.log('card.id: ' + card.id + ' was given issue.id: ' + newIssue.issueNumber)
 
     if(card.childOf) {
-
+      app.log('card.id: ' + card.id + ' reports to be a child of card.id ' + card.childOf);
       const parentIssue = newIssues.find(issue => issue.id === card.childOf)
-      console.log('parent id: ' + card.childOf + ' is: ' + parentIssue.issueNumber)
-
+      console.log('card.id: ' + card.id + ' has parent card.id: ' + card.childOf + ' whose issue.id is ' + parentIssue.issueNumber)
       issue = await getIssue(context, newIssue.issueNumber)
-
       const newBody = issue.data.body + '\n\nchild of #' + parentIssue.issueNumber
-
       await editIssue(context, newIssue.issueNumber, newBody)
+      await sleep(1000);
     }
 
     if(card.dependsOn) {
-
       for (const dependencyId of card.dependsOn) {
-
         const dependencyIssue = newIssues.find(issue => issue.id === dependencyId)
-
+      console.log('card.id: ' + card.id + ' has dependency on card.id: ' + dependencyId + ' whose issue.id is ' + dependencyIssue.issueNumber)
         issue = await getIssue(context, newIssue.issueNumber)
-
         const newBody = issue.data.body + '\n\ndepends on #' + dependencyIssue.issueNumber
-
         await editIssue(context, newIssue.issueNumber, newBody)
+        await sleep(1000);
       }
     }
   }
 }
 
 async function getIssue(context, issueNumber) {
-  
+
   const issue = context.repo({
     number: issueNumber
   })
@@ -112,13 +110,14 @@ async function getIssue(context, issueNumber) {
 
 async function createIssue(context, cardData) {
   const cardContentData = await helpers.readFilePromise('./content/cards/' + cardData.id + '.md')
-  
+
   const newIssue = context.repo({
-    title: cardData.title, 
+    title: cardData.title,
     labels: cardData.labels,
     body: cardContentData
   })
   const response = await context.github.issues.create(newIssue)
+  await sleep(5000);
   return response
 }
 
@@ -129,5 +128,10 @@ async function editIssue(context, issueNumber, body) {
     body: body
   })
   const response = await context.github.issues.edit(newIssue)
+  await sleep(1500);
   return response
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
