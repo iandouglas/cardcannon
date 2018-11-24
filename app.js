@@ -76,23 +76,23 @@ async function updateCardRelationships(context, cardData, newIssues) {
     console.log('card.id: ' + card.id + ' was given issue.id: ' + newIssue.issueNumber)
 
     if(card.childOf) {
-      app.log('card.id: ' + card.id + ' reports to be a child of card.id ' + card.childOf);
+      console.log('card.id: ' + card.id + ' reports to be a child of card.id ' + card.childOf);
       const parentIssue = newIssues.find(issue => issue.id === card.childOf)
       console.log('card.id: ' + card.id + ' has parent card.id: ' + card.childOf + ' whose issue.id is ' + parentIssue.issueNumber)
-      issue = await getIssue(context, newIssue.issueNumber)
+      let issue = await getIssue(context, newIssue.issueNumber)
       const newBody = issue.data.body + '\n\nchild of #' + parentIssue.issueNumber
       await editIssue(context, newIssue.issueNumber, newBody)
-      await sleep(1000);
+      await sleep(1250);
     }
 
     if(card.dependsOn) {
       for (const dependencyId of card.dependsOn) {
         const dependencyIssue = newIssues.find(issue => issue.id === dependencyId)
-      console.log('card.id: ' + card.id + ' has dependency on card.id: ' + dependencyId + ' whose issue.id is ' + dependencyIssue.issueNumber)
-        issue = await getIssue(context, newIssue.issueNumber)
+        console.log('card.id: ' + card.id + ' has dependency on card.id: ' + dependencyId + ' whose issue.id is ' + dependencyIssue.issueNumber)
+        let issue = await getIssue(context, newIssue.issueNumber)
         const newBody = issue.data.body + '\n\ndepends on #' + dependencyIssue.issueNumber
         await editIssue(context, newIssue.issueNumber, newBody)
-        await sleep(1000);
+        await sleep(1250);
       }
     }
   }
@@ -128,7 +128,7 @@ async function editIssue(context, issueNumber, body) {
     body: body
   })
   const response = await context.github.issues.edit(newIssue)
-  await sleep(1500);
+  await sleep(500);
   return response
 }
 
