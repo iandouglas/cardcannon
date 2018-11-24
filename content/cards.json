@@ -8,8 +8,17 @@
     "title": "Epic: Core Application"
   },
   {
-    "childOf": 1,
+    "childOf": 3,
     "id": 2,
+    "labels": [
+      "to-do",
+      "heroku"
+    ],
+    "title": "Deploy your application to Heroku"
+  },
+  {
+    "childOf": 1,
+    "id": 3,
     "labels": [
       "in progress",
       "navigation"
@@ -17,8 +26,8 @@
     "title": "Epic: Navigation"
   },
   {
-    "childOf": 2,
-    "id": 3,
+    "childOf": 3,
+    "id": 4,
     "labels": [
       "to-do",
       "navigation",
@@ -27,11 +36,11 @@
     "title": "Visitor Navigation"
   },
   {
-    "childOf": 2,
+    "childOf": 3,
     "dependsOn": [
-      3
+      4
     ],
-    "id": 4,
+    "id": 5,
     "labels": [
       "to-do",
       "navigation",
@@ -40,11 +49,11 @@
     "title": "User Navigation"
   },
   {
-    "childOf": 2,
+    "childOf": 3,
     "dependsOn": [
-      4
+      5
     ],
-    "id": 5,
+    "id": 6,
     "labels": [
       "to-do",
       "navigation",
@@ -53,11 +62,11 @@
     "title": "Merchant Navigation"
   },
   {
-    "childOf": 2,
+    "childOf": 3,
     "dependsOn": [
-      4
+      5
     ],
-    "id": 6,
+    "id": 7,
     "labels": [
       "to-do",
       "navigation",
@@ -67,11 +76,11 @@
   },
   {
     "dependsOn": [
-      3,
       4,
-      5
+      5,
+      6
     ],
-    "id": 7,
+    "id": 8,
     "labels": [
       "to-do",
       "navigation",
@@ -87,216 +96,7 @@
     "dependsOn": [
       3
     ],
-    "id": 8,
-    "labels": [
-      "in progress",
-      "items"
-    ],
-    "title": "Epic: Items Catalog"
-  },
-  {
-    "childOf": 8,
-    "dependsOn": [
-      3
-    ],
     "id": 9,
-    "labels": [
-      "to-do",
-      "items"
-    ],
-    "title": "Items Index Page"
-  },
-  {
-    "childOf": 8,
-    "dependsOn": [
-      9
-    ],
-    "id": 10,
-    "labels": [
-      "to-do",
-      "items",
-      "statistics"
-    ],
-    "title": "Items Index Page Statistics"
-  },
-  {
-    "childOf": 8,
-    "dependsOn": [
-      9
-    ],
-    "id": 11,
-    "labels": [
-      "to-do",
-      "items"
-    ],
-    "title": "Item Show Page"
-  },
-  {
-    "childOf": 1,
-    "dependsOn": [
-      3
-    ],
-    "id": 12,
-    "labels": [
-      "in progress",
-      "cart"
-    ],
-    "title": "Epic: Shopping Cart and Checkout"
-  },
-  {
-    "childOf": 12,
-    "dependsOn": [
-      11
-    ],
-    "id": 13,
-    "labels": [
-      "to-do",
-      "items",
-      "cart"
-    ],
-    "title": "User adds an item to the cart"
-  },
-  {
-    "childOf": 12,
-    "dependsOn": [
-      3
-    ],
-    "id": 14,
-    "labels": [
-      "to-do",
-      "items",
-      "cart"
-    ],
-    "title": "User views their cart show page with items in the cart"
-  },
-  {
-    "childOf": 12,
-    "dependsOn": [
-      3
-    ],
-    "id": 15,
-    "labels": [
-      "to-do",
-      "cart"
-    ],
-    "title": "User views their cart show page but it's empty"
-  },
-  {
-    "childOf": 12,
-    "dependsOn": [
-      14
-    ],
-    "id": 16,
-    "labels": [
-      "to-do",
-      "items",
-      "cart"
-    ],
-    "title": "User can empty a cart that has items"
-  },
-  {
-    "childOf": 12,
-    "dependsOn": [
-      14
-    ],
-    "id": 17,
-    "labels": [
-      "to-do",
-      "items",
-      "cart"
-    ],
-    "title": "User can manipulate quantities in their cart"
-  },
-  {
-    "childOf": 12,
-    "dependsOn": [
-      14,
-      3,
-      25,
-      49
-    ],
-    "id": 18,
-    "labels": [
-      "to-do",
-      "cart"
-    ],
-    "title": "Visitors must register or log in to check out"
-  },
-  {
-    "childOf": 12,
-    "dependsOn": [
-      14,
-      30
-    ],
-    "id": 19,
-    "labels": [
-      "to-do",
-      "cart"
-    ],
-    "title": "Registered users can check out"
-  },
-  {
-    "childOf": 1,
-    "dependsOn": [
-      54
-    ],
-    "id": 20,
-    "labels": [
-      "in progress",
-      "merchant",
-      "items",
-      "orders"
-    ],
-    "title": "Epic: Merchant Order Fulfillment"
-  },
-  {
-    "childOf": 20,
-    "dependsOn": [
-      55
-    ],
-    "id": 21,
-    "labels": [
-      "to-do",
-      "merchant",
-      "user",
-      "orders"
-    ],
-    "title": "Merchant sees an order show page"
-  },
-  {
-    "childOf": 20,
-    "dependsOn": [
-      21
-    ],
-    "id": 22,
-    "labels": [
-      "to-do",
-      "merchant",
-      "user",
-      "orders"
-    ],
-    "title": "Merchant fulfills part of an order"
-  },
-  {
-    "childOf": 38,
-    "dependsOn": [
-      55
-    ],
-    "id": 23,
-    "labels": [
-      "to-do",
-      "merchant",
-      "user",
-      "orders"
-    ],
-    "title": "Merchant cannot fulfill an order due to lack of inventory"
-  },
-  {
-    "childOf": 1,
-    "dependsOn": [
-      2
-    ],
-    "id": 24,
     "labels": [
       "in progress",
       "user",
@@ -305,11 +105,11 @@
     "title": "Epic: User Registration"
   },
   {
-    "childOf": 24,
+    "childOf": 9,
     "dependsOn": [
-      3
+      4
     ],
-    "id": 25,
+    "id": 10,
     "labels": [
       "to-do",
       "visitor",
@@ -318,11 +118,11 @@
     "title": "User Registration"
   },
   {
-    "childOf": 24,
+    "childOf": 9,
     "dependsOn": [
-      25
+      10
     ],
-    "id": 26,
+    "id": 11,
     "labels": [
       "to-do",
       "visitor",
@@ -331,11 +131,11 @@
     "title": "User Registration Missing Details"
   },
   {
-    "childOf": 24,
+    "childOf": 9,
     "dependsOn": [
-      25
+      10
     ],
-    "id": 27,
+    "id": 12,
     "labels": [
       "to-do",
       "user",
@@ -345,10 +145,115 @@
   },
   {
     "childOf": 1,
-    "dependsOn": [
-      24
+    "id": 13,
+    "labels": [
+      "in progress",
+      "admin",
+      "user"
     ],
-    "id": 28,
+    "title": "Epic: Login, Logout"
+  },
+  {
+    "childOf": 13,
+    "dependsOn": [
+      9
+    ],
+    "id": 14,
+    "labels": [
+      "to-do",
+      "session",
+      "user"
+    ],
+    "title": "User can Login"
+  },
+  {
+    "childOf": 13,
+    "dependsOn": [
+      14
+    ],
+    "id": 15,
+    "labels": [
+      "to-do",
+      "session",
+      "user"
+    ],
+    "title": "User cannot log in with bad credentials"
+  },
+  {
+    "childOf": 13,
+    "id": 16,
+    "labels": [
+      "to-do",
+      "session",
+      "user"
+    ],
+    "title": "Users who are logged in already are redirected"
+  },
+  {
+    "childOf": 13,
+    "id": 17,
+    "labels": [
+      "to-do",
+      "session",
+      "user"
+    ],
+    "title": "User can log out"
+  },
+  {
+    "childOf": 1,
+    "dependsOn": [
+      4
+    ],
+    "id": 18,
+    "labels": [
+      "in progress",
+      "items"
+    ],
+    "title": "Epic: Items Catalog"
+  },
+  {
+    "childOf": 18,
+    "dependsOn": [
+      4
+    ],
+    "id": 19,
+    "labels": [
+      "to-do",
+      "items"
+    ],
+    "title": "Items Index Page"
+  },
+  {
+    "childOf": 18,
+    "dependsOn": [
+      19
+    ],
+    "id": 20,
+    "labels": [
+      "to-do",
+      "items",
+      "statistics"
+    ],
+    "title": "Items Index Page Statistics"
+  },
+  {
+    "childOf": 18,
+    "dependsOn": [
+      19
+    ],
+    "id": 21,
+    "labels": [
+      "to-do",
+      "items"
+    ],
+    "title": "Item Show Page"
+  },
+  {
+    "childOf": 1,
+    "dependsOn": [
+      9
+    ],
+    "id": 22,
     "labels": [
       "in progress",
       "user",
@@ -357,8 +262,8 @@
     "title": "Epic: User Profile Show Page"
   },
   {
-    "childOf": 28,
-    "id": 29,
+    "childOf": 22,
+    "id": 23,
     "labels": [
       "to-do",
       "user",
@@ -367,12 +272,12 @@
     "title": "User Profile Show Page"
   },
   {
-    "childOf": 28,
+    "childOf": 22,
     "dependsOn": [
-      29,
-      39
+      23,
+      41
     ],
-    "id": 30,
+    "id": 24,
     "labels": [
       "to-do",
       "user",
@@ -382,11 +287,11 @@
     "title": "User Profile displays Orders"
   },
   {
-    "childOf": 28,
+    "childOf": 22,
     "dependsOn": [
-      29
+      23
     ],
-    "id": 31,
+    "id": 25,
     "labels": [
       "to-do",
       "user",
@@ -395,12 +300,12 @@
     "title": "User Can Edit their Profile Data"
   },
   {
-    "childOf": 28,
+    "childOf": 22,
     "dependsOn": [
-      29,
-      31
+      23,
+      25
     ],
-    "id": 32,
+    "id": 26,
     "labels": [
       "to-do",
       "user",
@@ -409,12 +314,12 @@
     "title": "User Editing Profile Data must have unique Email address"
   },
   {
-    "childOf": 28,
+    "childOf": 22,
     "dependsOn": [
-      6,
-      45
+      7,
+      75
     ],
-    "id": 33,
+    "id": 27,
     "labels": [
       "to-do",
       "admin",
@@ -424,12 +329,12 @@
     "title": "Admin User Profile Page"
   },
   {
-    "childOf": 28,
+    "childOf": 22,
     "dependsOn": [
-      6,
-      33
+      7,
+      27
     ],
-    "id": 34,
+    "id": 28,
     "labels": [
       "to-do",
       "admin",
@@ -439,12 +344,12 @@
     "title": "Admin can edit a user's profile data"
   },
   {
-    "childOf": 28,
+    "childOf": 22,
     "dependsOn": [
-      33,
-      39
+      27,
+      41
     ],
-    "id": 35,
+    "id": 29,
     "labels": [
       "to-do",
       "admin",
@@ -455,12 +360,12 @@
     "title": "Admin Sees User's Orders"
   },
   {
-    "childOf": 28,
+    "childOf": 22,
     "dependsOn": [
-      33,
-      58
+      27,
+      51
     ],
-    "id": 36,
+    "id": 30,
     "labels": [
       "to-do",
       "admin",
@@ -470,12 +375,12 @@
     "title": "Admin can make a User a Merchant"
   },
   {
-    "childOf": 28,
+    "childOf": 22,
     "dependsOn": [
-      33,
-      58
+      27,
+      51
     ],
-    "id": 37,
+    "id": 31,
     "labels": [
       "to-do",
       "admin",
@@ -486,7 +391,111 @@
   },
   {
     "childOf": 1,
+    "dependsOn": [
+      4
+    ],
+    "id": 32,
+    "labels": [
+      "in progress",
+      "cart"
+    ],
+    "title": "Epic: Shopping Cart and Checkout"
+  },
+  {
+    "childOf": 32,
+    "dependsOn": [
+      21
+    ],
+    "id": 33,
+    "labels": [
+      "to-do",
+      "items",
+      "cart"
+    ],
+    "title": "User adds an item to the cart"
+  },
+  {
+    "childOf": 32,
+    "dependsOn": [
+      4
+    ],
+    "id": 34,
+    "labels": [
+      "to-do",
+      "items",
+      "cart"
+    ],
+    "title": "User views their cart show page with items in the cart"
+  },
+  {
+    "childOf": 32,
+    "dependsOn": [
+      4
+    ],
+    "id": 35,
+    "labels": [
+      "to-do",
+      "cart"
+    ],
+    "title": "User views their cart show page but it's empty"
+  },
+  {
+    "childOf": 32,
+    "dependsOn": [
+      34
+    ],
+    "id": 36,
+    "labels": [
+      "to-do",
+      "items",
+      "cart"
+    ],
+    "title": "User can empty a cart that has items"
+  },
+  {
+    "childOf": 32,
+    "dependsOn": [
+      34
+    ],
+    "id": 37,
+    "labels": [
+      "to-do",
+      "items",
+      "cart"
+    ],
+    "title": "User can manipulate quantities in their cart"
+  },
+  {
+    "childOf": 32,
+    "dependsOn": [
+      34,
+      4,
+      10,
+      14
+    ],
     "id": 38,
+    "labels": [
+      "to-do",
+      "cart"
+    ],
+    "title": "Visitors must register or log in to check out"
+  },
+  {
+    "childOf": 32,
+    "dependsOn": [
+      34,
+      24
+    ],
+    "id": 39,
+    "labels": [
+      "to-do",
+      "cart"
+    ],
+    "title": "Registered users can check out"
+  },
+  {
+    "childOf": 1,
+    "id": 40,
     "labels": [
       "in progress",
       "orders",
@@ -495,11 +504,11 @@
     "title": "Epic: User Order Show Page"
   },
   {
-    "childOf": 38,
+    "childOf": 40,
     "dependsOn": [
-      28
+      22
     ],
-    "id": 39,
+    "id": 41,
     "labels": [
       "to-do",
       "user",
@@ -508,11 +517,11 @@
     "title": "User views an Order Show Page"
   },
   {
-    "childOf": 38,
+    "childOf": 40,
     "dependsOn": [
-      35
+      29
     ],
-    "id": 40,
+    "id": 42,
     "labels": [
       "to-do",
       "admin",
@@ -522,12 +531,12 @@
     "title": "Admin views a User's Order Show Page"
   },
   {
-    "childOf": 38,
+    "childOf": 40,
     "dependsOn": [
-      28,
-      39
+      22,
+      41
     ],
-    "id": 41,
+    "id": 43,
     "labels": [
       "to-do",
       "user",
@@ -536,12 +545,12 @@
     "title": "User cancels an order"
   },
   {
-    "childOf": 38,
+    "childOf": 40,
     "dependsOn": [
-      28,
-      39
+      22,
+      41
     ],
-    "id": 42,
+    "id": 44,
     "labels": [
       "to-do",
       "admin",
@@ -553,9 +562,9 @@
   {
     "childOf": 1,
     "dependsOn": [
-      22
+      72
     ],
-    "id": 43,
+    "id": 45,
     "labels": [
       "to-do",
       "merchant",
@@ -566,115 +575,10 @@
   },
   {
     "childOf": 1,
-    "id": 44,
-    "labels": [
-      "in progress",
-      "admin",
-      "user"
-    ],
-    "title": "Epic: Admin User Index Page"
-  },
-  {
-    "childOf": 44,
     "dependsOn": [
-      6
-    ],
-    "id": 45,
-    "labels": [
-      "to-do",
-      "admin",
-      "user"
-    ],
-    "title": "Admin User Index Page"
-  },
-  {
-    "childOf": 44,
-    "dependsOn": [
-      45
+      9
     ],
     "id": 46,
-    "labels": [
-      "to-do",
-      "admin",
-      "user"
-    ],
-    "title": "Admin disables a user account"
-  },
-  {
-    "childOf": 44,
-    "dependsOn": [
-      45
-    ],
-    "id": 47,
-    "labels": [
-      "to-do",
-      "admin",
-      "user"
-    ],
-    "title": "Admin enables a user account"
-  },
-  {
-    "childOf": 1,
-    "id": 48,
-    "labels": [
-      "in progress",
-      "admin",
-      "user"
-    ],
-    "title": "Epic: Login, Logout"
-  },
-  {
-    "childOf": 48,
-    "dependsOn": [
-      24
-    ],
-    "id": 49,
-    "labels": [
-      "to-do",
-      "session",
-      "user"
-    ],
-    "title": "User can Login"
-  },
-  {
-    "childOf": 48,
-    "dependsOn": [
-      49
-    ],
-    "id": 50,
-    "labels": [
-      "to-do",
-      "session",
-      "user"
-    ],
-    "title": "User cannot log in with bad credentials"
-  },
-  {
-    "childOf": 48,
-    "id": 51,
-    "labels": [
-      "to-do",
-      "session",
-      "user"
-    ],
-    "title": "Users who are logged in already are redirected"
-  },
-  {
-    "childOf": 48,
-    "id": 52,
-    "labels": [
-      "to-do",
-      "session",
-      "user"
-    ],
-    "title": "User can log out"
-  },
-  {
-    "childOf": 1,
-    "dependsOn": [
-      24
-    ],
-    "id": 53,
     "labels": [
       "in progress",
       "merchant",
@@ -683,12 +587,12 @@
     "title": "Epic: Merchant Dashboard"
   },
   {
-    "childOf": 53,
+    "childOf": 46,
     "dependsOn": [
-      24,
-      61
+      9,
+      54
     ],
-    "id": 54,
+    "id": 47,
     "labels": [
       "to-do",
       "merchant",
@@ -697,11 +601,11 @@
     "title": "Merchant Dashboard Show Page"
   },
   {
-    "childOf": 53,
+    "childOf": 46,
     "dependsOn": [
-      21
+      71
     ],
-    "id": 55,
+    "id": 48,
     "labels": [
       "to-do",
       "merchant",
@@ -711,8 +615,8 @@
     "title": "Merchant Dashboard displays Orders"
   },
   {
-    "childOf": 53,
-    "id": 56,
+    "childOf": 46,
+    "id": 49,
     "labels": [
       "to-do",
       "merchant",
@@ -721,11 +625,11 @@
     "title": "Merchant Dashboard Statistics"
   },
   {
-    "childOf": 53,
+    "childOf": 46,
     "dependsOn": [
-      29
+      23
     ],
-    "id": 57,
+    "id": 50,
     "labels": [
       "to-do",
       "merchant",
@@ -734,8 +638,8 @@
     "title": "Merchant's Items index page"
   },
   {
-    "childOf": 53,
-    "id": 58,
+    "childOf": 46,
+    "id": 51,
     "labels": [
       "to-do",
       "admin",
@@ -745,8 +649,8 @@
     "title": "Admin can see a merchant's dashboard"
   },
   {
-    "childOf": 53,
-    "id": 59,
+    "childOf": 46,
+    "id": 52,
     "labels": [
       "to-do",
       "admin",
@@ -756,8 +660,8 @@
     "title": "Admin can downgrade a merchant to regular user"
   },
   {
-    "childOf": 53,
-    "id": 60,
+    "childOf": 46,
+    "id": 53,
     "labels": [
       "to-do",
       "admin",
@@ -769,9 +673,9 @@
   {
     "childOf": 1,
     "dependsOn": [
-      3
+      4
     ],
-    "id": 61,
+    "id": 54,
     "labels": [
       "in progress",
       "merchant"
@@ -779,11 +683,11 @@
     "title": "Epic: Merchant Index Page"
   },
   {
-    "childOf": 61,
+    "childOf": 54,
     "dependsOn": [
-      3
+      4
     ],
-    "id": 62,
+    "id": 55,
     "labels": [
       "to-do",
       "merchant"
@@ -791,11 +695,11 @@
     "title": "Merchant Index Page"
   },
   {
-    "childOf": 61,
+    "childOf": 54,
     "dependsOn": [
-      62
+      55
     ],
-    "id": 63,
+    "id": 56,
     "labels": [
       "to-do",
       "merchant",
@@ -804,11 +708,11 @@
     "title": "Merchant Index Page Statistics"
   },
   {
-    "childOf": 61,
+    "childOf": 54,
     "dependsOn": [
-      62
+      55
     ],
-    "id": 64,
+    "id": 57,
     "labels": [
       "to-do",
       "admin",
@@ -817,11 +721,11 @@
     "title": "Admin visits Merchant Index Page"
   },
   {
-    "childOf": 61,
+    "childOf": 54,
     "dependsOn": [
-      64
+      57
     ],
-    "id": 65,
+    "id": 58,
     "labels": [
       "to-do",
       "admin",
@@ -830,11 +734,11 @@
     "title": "Admin disables a merchant account"
   },
   {
-    "childOf": 61,
+    "childOf": 54,
     "dependsOn": [
-      64
+      57
     ],
-    "id": 66,
+    "id": 59,
     "labels": [
       "to-do",
       "admin",
@@ -845,9 +749,9 @@
   {
     "childOf": 1,
     "dependsOn": [
-      54
+      47
     ],
-    "id": 67,
+    "id": 60,
     "labels": [
       "in progress",
       "merchant",
@@ -856,11 +760,11 @@
     "title": "Epic: Merchant Items"
   },
   {
-    "childOf": 67,
+    "childOf": 60,
     "dependsOn": [
-      54
+      47
     ],
-    "id": 68,
+    "id": 61,
     "labels": [
       "to-do",
       "merchant",
@@ -869,11 +773,11 @@
     "title": "Merchant Items Index Page"
   },
   {
-    "childOf": 67,
+    "childOf": 60,
     "dependsOn": [
-      68
+      61
     ],
-    "id": 69,
+    "id": 62,
     "labels": [
       "to-do",
       "merchant",
@@ -882,11 +786,11 @@
     "title": "Merchant disables an item"
   },
   {
-    "childOf": 67,
+    "childOf": 60,
     "dependsOn": [
-      68
+      61
     ],
-    "id": 70,
+    "id": 63,
     "labels": [
       "to-do",
       "merchant",
@@ -895,11 +799,11 @@
     "title": "Merchant enables an item"
   },
   {
-    "childOf": 67,
+    "childOf": 60,
     "dependsOn": [
-      68
+      61
     ],
-    "id": 71,
+    "id": 64,
     "labels": [
       "to-do",
       "merchant",
@@ -908,11 +812,11 @@
     "title": "Merchant deletes an item"
   },
   {
-    "childOf": 67,
+    "childOf": 60,
     "dependsOn": [
-      68
+      61
     ],
-    "id": 72,
+    "id": 65,
     "labels": [
       "to-do",
       "merchant",
@@ -921,11 +825,11 @@
     "title": "Merchant adds an item"
   },
   {
-    "childOf": 67,
+    "childOf": 60,
     "dependsOn": [
-      72
+      65
     ],
-    "id": 73,
+    "id": 66,
     "labels": [
       "to-do",
       "merchant",
@@ -934,11 +838,11 @@
     "title": "Merchant cannot add an item if details are bad/missing"
   },
   {
-    "childOf": 67,
+    "childOf": 60,
     "dependsOn": [
-      72
+      65
     ],
-    "id": 74,
+    "id": 67,
     "labels": [
       "to-do",
       "merchant",
@@ -947,11 +851,11 @@
     "title": "Merchant edits an item"
   },
   {
-    "childOf": 67,
+    "childOf": 60,
     "dependsOn": [
-      74
+      67
     ],
-    "id": 75,
+    "id": 68,
     "labels": [
       "to-do",
       "merchant",
@@ -960,18 +864,123 @@
     "title": "Merchant cannot edit an item if details are bad/missing"
   },
   {
-    "childOf": 67,
+    "childOf": 60,
     "dependsOn": [
-      68,
-      72,
-      74
+      61,
+      65,
+      67
     ],
-    "id": 76,
+    "id": 69,
     "labels": [
       "to-do",
       "merchant",
       "items"
     ],
     "title": "Admin can manage items on behalf of a merchant"
+  },
+  {
+    "childOf": 1,
+    "dependsOn": [
+      47
+    ],
+    "id": 70,
+    "labels": [
+      "in progress",
+      "merchant",
+      "items",
+      "orders"
+    ],
+    "title": "Epic: Merchant Order Fulfillment"
+  },
+  {
+    "childOf": 70,
+    "dependsOn": [
+      48
+    ],
+    "id": 71,
+    "labels": [
+      "to-do",
+      "merchant",
+      "user",
+      "orders"
+    ],
+    "title": "Merchant sees an order show page"
+  },
+  {
+    "childOf": 70,
+    "dependsOn": [
+      71
+    ],
+    "id": 72,
+    "labels": [
+      "to-do",
+      "merchant",
+      "user",
+      "orders"
+    ],
+    "title": "Merchant fulfills part of an order"
+  },
+  {
+    "childOf": 40,
+    "dependsOn": [
+      48
+    ],
+    "id": 73,
+    "labels": [
+      "to-do",
+      "merchant",
+      "user",
+      "orders"
+    ],
+    "title": "Merchant cannot fulfill an order due to lack of inventory"
+  },
+  {
+    "childOf": 1,
+    "id": 74,
+    "labels": [
+      "in progress",
+      "admin",
+      "user"
+    ],
+    "title": "Epic: Admin User Index Page"
+  },
+  {
+    "childOf": 74,
+    "dependsOn": [
+      7
+    ],
+    "id": 75,
+    "labels": [
+      "to-do",
+      "admin",
+      "user"
+    ],
+    "title": "Admin User Index Page"
+  },
+  {
+    "childOf": 74,
+    "dependsOn": [
+      75
+    ],
+    "id": 76,
+    "labels": [
+      "to-do",
+      "admin",
+      "user"
+    ],
+    "title": "Admin disables a user account"
+  },
+  {
+    "childOf": 74,
+    "dependsOn": [
+      75
+    ],
+    "id": 77,
+    "labels": [
+      "to-do",
+      "admin",
+      "user"
+    ],
+    "title": "Admin enables a user account"
   }
 ]
